@@ -130,21 +130,6 @@ Open your browser at `http://localhost:8501`.
 
 ---
 
-## 💡 Placement & Interview Talking Points
-
-When presenting this project in software engineering interviews, emphasize:
-
-1. **Zero External API Dependency**:
-   - The entire solution runs locally. You don't face OpenAI API costs, rate-limiting, or downtime risks during live hiring demonstrations.
-2. **Explainable Mathematics vs Black-Box Models**:
-   - Instead of blindly querying a prompt, the matching score uses verifiable TF-IDF term weighting and cosine geometry:
-     $$\text{Cosine Similarity}(A, B) = \frac{A \cdot B}{\|A\| \|B\|}$$
-3. **Clean Decoupled Architecture**:
-   - Extraction (`utils/pdf_reader.py`), normalization (`nlp/text_cleaner.py`), analysis (`analyzer/`), and UI (`pages/`) are completely decoupled into distinct modules following single-responsibility principles.
-4. **Data Privacy & Compliance**:
-   - Sensitive personal resume data (names, emails, phones) is kept completely on-premise inside local SQLite, meeting modern data privacy expectations.
-
----
 
 ## 📄 License
 This project is open-source under the MIT License.
