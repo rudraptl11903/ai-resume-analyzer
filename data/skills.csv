@@ -1,0 +1,97 @@
+skill,category
+Python,Programming Languages
+Java,Programming Languages
+C++,Programming Languages
+C#,Programming Languages
+C,Programming Languages
+JavaScript,Programming Languages
+TypeScript,Programming Languages
+Go,Programming Languages
+Rust,Programming Languages
+Kotlin,Programming Languages
+Swift,Programming Languages
+PHP,Programming Languages
+Ruby,Programming Languages
+SQL,Programming Languages
+R,Programming Languages
+HTML5,Web Development
+CSS3,Web Development
+React,Web Development
+Angular,Web Development
+Vue.js,Web Development
+Next.js,Web Development
+Node.js,Web Development
+Express.js,Web Development
+Django,Web Development
+Flask,Web Development
+FastAPI,Web Development
+Spring Boot,Web Development
+ASP.NET,Web Development
+Tailwind CSS,Web Development
+Bootstrap,Web Development
+REST API,Web Development
+GraphQL,Web Development
+PostgreSQL,Databases
+MySQL,Databases
+MongoDB,Databases
+SQLite,Databases
+Redis,Databases
+Oracle,Databases
+Cassandra,Databases
+DynamoDB,Databases
+Elasticsearch,Databases
+Firebase,Databases
+AWS,Cloud & DevOps
+Azure,Cloud & DevOps
+Google Cloud Platform,Cloud & DevOps
+Docker,Cloud & DevOps
+Kubernetes,Cloud & DevOps
+CI/CD,Cloud & DevOps
+Terraform,Cloud & DevOps
+Ansible,Cloud & DevOps
+Jenkins,Cloud & DevOps
+GitHub Actions,Cloud & DevOps
+Linux,Cloud & DevOps
+Nginx,Cloud & DevOps
+Git,Tools & Version Control
+GitHub,Tools & Version Control
+GitLab,Tools & Version Control
+Jira,Tools & Version Control
+Postman,Tools & Version Control
+VS Code,Tools & Version Control
+PyTorch,Data Science & AI
+TensorFlow,Data Science & AI
+Keras,Data Science & AI
+Scikit-learn,Data Science & AI
+Pandas,Data Science & AI
+NumPy,Data Science & AI
+Matplotlib,Data Science & AI
+Seaborn,Data Science & AI
+Plotly,Data Science & AI
+OpenCV,Data Science & AI
+NLTK,Data Science & AI
+spaCy,Data Science & AI
+Hugging Face,Data Science & AI
+LLM,Data Science & AI
+Machine Learning,Data Science & AI
+Deep Learning,Data Science & AI
+Data Analysis,Data Science & AI
+Data Visualization,Data Science & AI
+Statistical Analysis,Data Science & AI
+Feature Engineering,Data Science & AI
+Object-Oriented Programming,Software Engineering
+Data Structures & Algorithms,Software Engineering
+System Design,Software Engineering
+Design Patterns,Software Engineering
+Microservices,Software Engineering
+Unit Testing,Software Engineering
+Test-Driven Development,Software Engineering
+Agile,Project Management
+Scrum,Project Management
+Communication,Soft Skills
+Problem Solving,Soft Skills
+Team Collaboration,Soft Skills
+Critical Thinking,Soft Skills
+Time Management,Soft Skills
+Adaptability,Soft Skills
+Leadership,Soft Skills
