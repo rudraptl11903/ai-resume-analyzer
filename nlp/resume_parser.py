@@ -118,6 +118,57 @@ def identify_sections(text: str) -> Dict[str, bool]:
     return sections
 
 
+def extract_section_contents(text: str) -> Dict[str, str]:
+    """
+    Extracts raw text belonging to specific resume sections by finding
+    standard section headers and slicing the intervening content.
+    """
+    if not text:
+        return {}
+
+    # Common section header patterns (case-insensitive, standalone lines or bolded)
+    header_patterns = [
+        ("summary", r"(?:^|\n)\s*(?:professional\s+summary|executive\s+summary|summary|profile|about\s+me)\b[:\s]*\n"),
+        ("skills", r"(?:^|\n)\s*(?:technical\s+skills|core\s+competencies|technologies|skills\s*(?:&|and)\s*tools|skills)\b[:\s]*\n"),
+        ("experience", r"(?:^|\n)\s*(?:work\s+experience|professional\s+experience|employment\s+history|experience|internships?)\b[:\s]*\n"),
+        ("projects", r"(?:^|\n)\s*(?:technical\s+projects|personal\s+projects|key\s+projects|projects|portfolio)\b[:\s]*\n"),
+        ("education", r"(?:^|\n)\s*(?:education\s*(?:&|and)\s*credentials|education|academic\s+background|academics)\b[:\s]*\n"),
+        ("certifications", r"(?:^|\n)\s*(?:certifications\s*(?:&|and)\s*licenses|certifications?|licenses?|credentials)\b[:\s]*\n"),
+    ]
+
+    # Find start and end indices of each detected header
+    found_headers = []
+    for sec_name, pattern in header_patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            found_headers.append({
+                "section": sec_name,
+                "start": match.start(),
+                "content_start": match.end()
+            })
+
+    # Sort by appearance in the document
+    found_headers.sort(key=lambda h: h["start"])
+
+    contents: Dict[str, str] = {
+        "summary": "",
+        "skills": "",
+        "experience": "",
+        "projects": "",
+        "education": "",
+        "certifications": ""
+    }
+
+    for i, h in enumerate(found_headers):
+        sec = h["section"]
+        c_start = h["content_start"]
+        c_end = found_headers[i + 1]["start"] if i + 1 < len(found_headers) else len(text)
+        sec_text = text[c_start:c_end].strip()
+        contents[sec] = sec_text
+
+    return contents
+
+
 def parse_resume(raw_text: str, filename: str = "resume.pdf") -> Dict[str, Any]:
     """
     Master function to parse a resume document.
@@ -128,6 +179,7 @@ def parse_resume(raw_text: str, filename: str = "resume.pdf") -> Dict[str, Any]:
     phone = extract_phone(raw_text)
     links = extract_links(raw_text)
     sections = identify_sections(raw_text)
+    section_contents = extract_section_contents(raw_text)
     skills = extract_skills(raw_text)
     skills_by_category = extract_skills_with_categories(raw_text)
     cleaned = clean_text(raw_text)
@@ -140,6 +192,7 @@ def parse_resume(raw_text: str, filename: str = "resume.pdf") -> Dict[str, Any]:
         "phone": phone or "Not detected",
         "links": links,
         "sections": sections,
+        "section_contents": section_contents,
         "skills": skills,
         "skills_by_category": skills_by_category,
         "word_count": word_count,
